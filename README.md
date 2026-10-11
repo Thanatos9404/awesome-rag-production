@@ -718,6 +718,15 @@ opposite end, and the two compose.
     the KV-cache. The published research lineage makes it the reference point for
     compression quality, though upstream commit activity has slowed — check
     maintenance status before adopting it in a new pipeline.
+- [LLMSlim](https://github.com/Thanatos9404/llmslim)
+  <!-- verified: 2026-10-12 -->
+  - An MIT-licensed Python library that selects query-relevant units from retrieved
+    passages under a hard token budget, lexically or with an optional 22M
+    cross-encoder, instead of deleting tokens. Its self-reported head-to-head
+    (Claude Haiku 5.5 reader, NaturalQuestions 20-doc, 300 cases, ~25% budget)
+    gives 78.7% vs 78.0% for LongLLMLingua and 69.0% for LLMLingua-2, at a median
+    0.09 s vs 9.3 s per question; full context still scores 89.0%
+    ([source](https://github.com/Thanatos9404/llmslim/blob/main/benchmarks/live/README.md), 2026-10-11, `[V]`).
 
 **Compression trade-offs:**
 
